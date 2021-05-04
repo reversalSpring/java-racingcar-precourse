@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import common.RacingRandom;
+
 public class RacingGame {
 	private List<RacingCar> racingCarList = new ArrayList<>();
+	private RacingRandom racingRandom = new RacingRandom();
 
 	private int racingEndRound;
 
@@ -18,7 +21,7 @@ public class RacingGame {
 
 	public List<RacingCar> moveCars() {
 		for (RacingCar car : racingCarList) {
-			int power = 1;
+			int power = racingRandom.getRandomNumber();
 			car.move(power);
 		}
 
